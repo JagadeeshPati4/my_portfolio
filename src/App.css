@@ -1,0 +1,14 @@
+#root {
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+  height: 100%;
+}
+
+
+.main{
+  height: 100%;
+}
+*{
+  font-family: 'Courier New', Courier, monospace;
+}

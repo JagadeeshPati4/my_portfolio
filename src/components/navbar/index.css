@@ -1,0 +1,90 @@
+.button{
+    width: max-content;
+    height: max-content;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8%;
+    background-image: linear-gradient(to right,#2B2A2A 52%,#FEB401 50% );
+    background-size: 200% 100%;
+    background-position: left bottom;
+    transition: background-position 1s ease-out;
+    color: aliceblue;
+}
+.icon-container{
+    height: auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    align-self: center;
+    overflow: hidden; 
+    width: 100%;
+    position: relative;
+    white-space: nowrap;
+    vertical-align: baseline;
+    margin-bottom: 20%;
+}
+
+.nav-container{
+    background-color:transparent;
+    display: flex;
+    width: max-content;
+    flex-direction: column;
+    justify-content: center;
+    /* padding-right: 10%; */
+    height: 100vh;
+    position: fixed;
+    
+}
+.home{
+    display: inline-block;
+    vertical-align: baseline;
+    opacity: 0;
+    width: 0;
+    text-align: center;
+    color: aliceblue;
+    transition: opacity 0s, max-width 0.3s ease-in-out; 
+}
+.hover:hover{
+    background-color: #FEB401;
+    border-radius: 25px;
+    .button{
+        background-image: none;
+    }
+    
+}
+.hover:hover .home {
+    opacity: 1;
+    width: auto;
+}
+.nav-link{
+    text-decoration: none;
+}
+.orange{
+    background-image: linear-gradient(to right,#FEB401 50%,#FEB401 50% );
+}
+
+@media screen and (max-width: 900px) {
+    .nav-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+        width: 100vw;
+        height: 80px;
+        position: static;
+    }
+    .icon-container{
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-bottom: 0px;
+        padding: 0px;
+    }
+   
+
+    
+}

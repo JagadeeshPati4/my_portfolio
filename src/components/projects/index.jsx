@@ -1,56 +1,67 @@
 import React, { useState,useContext } from 'react';
 import { Card, CardContent, CardMedia, Typography, Button, Popover, Box } from '@mui/material';
 import { IoEyeOutline } from "react-icons/io5";
-import sample from '../../assets/images/sample.jpg';
 import {context} from '../../App';
 
 const projects = [
   {
-    title: 'Stock Analytics Dashboard',
-    description: 'A full-stack application for analyzing stock data using real-time market insights and visualizations. Built with Django for the back end and React for the front end.',
-    technologies: ['Django', 'React', 'MySQL', 'Chart.js'],
-    link: 'https://github.com/yourusername/stock-analytics-dashboard',
-    liveDemo: 'https://yourdomain.com/stock-dashboard',
-    image:sample,
-
+    title: 'InstaShare',
+    description: 'A social media sharing application that allows users to view, and interact with images and others. Features include user authentication, Login and a responsive design. Built using React for the front end and Fetch API for seamless communication with the backend.',
+    technologies: ['React', 'HTML', 'CSS', 'JavaScript', 'Fetch API'],
+    link: 'https://github.com/JagadeeshPati4/instra-share',
+    liveDemo: 'https://jagadeeshinsta.ccbp.tech/',
+    image: 'https://res.cloudinary.com/jagadeesh123/image/upload/v1737845569/instaShare_kuk9me.png',
   },
   {
-    title: 'AI-Powered Flashcards',
-    description: 'An interactive flashcard application that uses AI tools like ChatGPT and Qwen to generate custom learning content. The front end is built with HTML, CSS, and JavaScript, while the back end uses Flask.',
-    technologies: ['HTML', 'CSS', 'JavaScript', 'Flask', 'ChatGPT'],
-    link: 'https://github.com/yourusername/ai-flashcards',
-    liveDemo: 'https://yourdomain.com/ai-flashcards',
-    image:       sample,
-
+    title: 'Winkipedia Search',
+    description: 'A responsive Wikipedia search application where users can look up topics in real time using the Wikipedia API. Built with React for an intuitive and fast user experience.',
+    technologies: ['React', 'HTML', 'CSS', 'JavaScript', 'Fetch API'],
+    link: 'https://github.com/JagadeeshPati4/winkipedia-search',
+    liveDemo: 'https://wikipediasearch1.netlify.app/',
+    image: 'https://res.cloudinary.com/jagadeesh123/image/upload/v1737845474/winkipedia-search_ggmdty.png',
   },
   {
-    title: 'Personal Portfolio Website',
-    description: 'A responsive personal portfolio website to showcase my skills, projects, and experience. Built using React and styled with Material-UI.',
-    technologies: ['React', 'Material-UI', 'JavaScript'],
-    link: 'https://github.com/yourusername/portfolio',
-    liveDemo: 'https://yourdomain.com',
-    image:       sample,
-
+    title: 'React Dashboard UI',
+    description: 'A sleek and modern admin dashboard template designed to visualize data and manage tasks effectively. Features customizable widgets. Built with React and styled for a clean user interface.',
+    technologies: ['React', 'HTML', 'CSS', 'JavaScript', 'Fetch API'],
+    link: 'https://github.com/JagadeeshPati4/react-dashboard-ui',
+    liveDemo: 'https://react-ui-dashboard2.netlify.app/',
+    image: 'https://res.cloudinary.com/jagadeesh123/image/upload/v1737845592/react-dashboard-ui_shbujv.png',
   },
   {
-    title: 'E-commerce Web App',
-    description: 'An e-commerce web app with user authentication, shopping cart functionality, and order management. Developed using Node.js, Express, and MongoDB.',
-    technologies: ['Node.js', 'Express', 'MongoDB', 'React'],
-    link: 'https://github.com/yourusername/ecommerce-web-app',
-    liveDemo: 'https://yourdomain.com/ecommerce',
-    image:       sample,
-
+    title: 'Custom Browser Implementation',
+    description: 'A lightweight custom browser project that allows users to switch between multiple tabs within an iFrame-like interface. Built using HTML, CSS, and JavaScript for a streamlined browsing experience.',
+    technologies: ['HTML', 'CSS', 'JavaScript', 'I-Frame'],
+    link: 'https://github.com/JagadeeshPati4/broswer-switching-tabs',
+    liveDemo: 'https://custom-broswer-implementation.netlify.app/',
+    image: 'https://res.cloudinary.com/jagadeesh123/image/upload/v1737845819/custom-broswer-implementation_p8oh8d.png',
   },
   {
-    title: 'Weather App',
-    description: 'A weather app that provides real-time weather updates using an external weather API. Built using React and styled with CSS.',
-    technologies: ['React', 'CSS', 'Weather API'],
-    link: 'https://github.com/yourusername/weather-app',
-    liveDemo: 'https://yourdomain.com/weather-app',
-    image:       sample,
-
+    title: 'Stack Overflow Clone',
+    description: 'A full-stack replica of Stack Overflow where users can ask questions, provide answers, and upvote/downvote posts. Built using React for the front end and Node.js, Express, and MongoDB for the back end.',
+    technologies: ['React', 'HTML', 'CSS', 'JavaScript', 'MongoDB', 'Express', 'Node.js'],
+    link: 'https://github.com/JagadeeshPati4/stack_over_flow',
+    liveDemo: 'https://stackoverflow-c.netlify.app/',
+    image: 'https://res.cloudinary.com/jagadeesh123/image/upload/v1737845509/stack-overflow-clone_xd3v3e.png',
+  },
+  {
+    title: 'Destination Search',
+    description: 'A search-based travel web that allows users to find and explore travel destinations effortlessly. Features a responsive design built with React and styled with CSS.',
+    technologies: ['React', 'HTML', 'CSS', 'JavaScript'],
+    link: 'https://github.com/JagadeeshPati4/Destinaction',
+    liveDemo: 'https://distinatationsearch1.netlify.app/',
+    image: 'https://res.cloudinary.com/jagadeesh123/image/upload/v1737845557/distinaction-search_fspvay.png',
+  },
+  {
+    title: 'Random Numbers Generator',
+    description: 'A simple yet interactive app that generates random numbers within a user-defined range. Built using pure HTML, CSS, and JavaScript, it offers a lightweight and responsive interface.',
+    technologies: ['HTML', 'CSS', 'JavaScript'],
+    link: 'https://github.com/JagadeeshPati4/random-number-generators',
+    liveDemo: 'https://randonnumber3.netlify.app/',
+    image: 'https://res.cloudinary.com/jagadeesh123/image/upload/v1737845579/Random_Numbers_Generator_njrnsl.png',
   },
 ];
+
 
 const Projects = () => {
   const contextValue = useContext(context);

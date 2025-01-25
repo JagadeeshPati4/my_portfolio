@@ -33,7 +33,6 @@ const About = () => {
     { name: 'Python', percentage: 85 },
     { name: 'MySQL', percentage: 85 },
     { name: 'React.js', percentage: 70 },
-    { name: 'Node.js', percentage: 60 },
     { name: 'Material UI', percentage: 50 }
   ];
 
@@ -111,8 +110,7 @@ const About = () => {
       styleSheet.insertRule(keyframes, styleSheet.cssRules.length);
     });
   }, [skills]);
-  // backgroundColor: light ? "#ffffff" : "#000000",
-  // color: light ? "#000000" : "#ffffff",
+  
   return (
     <Box sx={{ color: isColor, backgroundColor: isBgColor, overflowX: 'hidden',margin: { xs: '0% 0% 10% 0%', sm: '0' },
     padding: { xs: '10% 0% 0% 0%', sm: '0' }, // Hide horizontal scroll bar

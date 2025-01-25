@@ -37,7 +37,7 @@ function App() {
         
 
         {/* Main Content Section */}
-        <Grid item xs={12} sm={10.7} sx={{ overflow: 'hidden',}}>
+        <Grid item xs={12}  sm={9} md={10} lg={10.5}  sx={{ overflow: 'hidden',}}>
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/About' element={<About />}/>
@@ -48,7 +48,7 @@ function App() {
           </Routes>
         </Grid>
         {/* Navbar Section */}
-        <Grid item xs={12} sm={1.3}>
+        <Grid item xs={12} sm={3} md={2} lg={1.5}>
           <Navbar  />
         </Grid>
       </Grid>

@@ -3,7 +3,7 @@ import { FaArrowRight } from "react-icons/fa";
 import { Box, Typography, Button,useMediaQuery, Container, Link as MuiLink, useTheme } from '@mui/material';
 import { Typewriter } from 'react-simple-typewriter';
 import { Link } from 'react-router-dom';
-import luffy from '../../assets/images/peakpx-luffy.png'; // Ensure this path is correct and the file exists.
+import jagadeesh from '../../assets/images/jagadeesh1.jpg'; 
 import {context} from '../../App';
 
 
@@ -70,8 +70,8 @@ const Home = () => {
                 <Box sx={mainBox2}>
                     <Box
                         component="img"
-                        src={luffy}
-                        alt="luffy"
+                        src={jagadeesh}
+                        alt="jagadeesh"
                         style={{ height: '100%', width: '100%', objectFit: 'fill' }}
 
                     />

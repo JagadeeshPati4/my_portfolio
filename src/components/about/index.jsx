@@ -1,6 +1,6 @@
 import React, { useEffect,useContext } from 'react';
 import { Box, Typography, Button, Grid, List, ListItem, Paper } from '@mui/material';
-import { Timeline, TimelineItem, TimelineSeparator, TimelineDot, TimelineConnector, TimelineContent, TimelineOppositeContent } from '@mui/lab';
+import { Timeline, TimelineItem, TimelineSeparator, TimelineDot, TimelineConnector, TimelineContent, TimelineOppositeContent,timelineItemClasses  } from '@mui/lab';
 import { FaDownload } from "react-icons/fa6";
 import { IoEyeOutline } from "react-icons/io5";
 import { useTheme } from '@mui/material/styles';
@@ -101,7 +101,80 @@ const About = () => {
       styleSheet.insertRule(keyframes, styleSheet.cssRules.length);
     });
   }, [skills]);
-  
+ 
+  const TimelineSection = ({ items, IconComponent, type ,isMobile}) => {
+    
+    return (
+        <Timeline
+            sx={{
+                ...(isMobile && {
+                    [`& .${timelineItemClasses.root}:before`]: {
+                        flex: 0,
+                        padding: 0,
+                    },
+                }),
+                ...(!isMobile && {
+                    position: 'alternate'
+                })
+            }}
+        >
+            {items.map((item, index) => (
+                <TimelineItem key={index}>
+                    {!isMobile && (
+                        <TimelineOppositeContent sx={{ m: 'auto 0' }}>
+                            <Typography variant="body2" sx={{ color: '#FEB401', fontWeight: 'bold' }}>
+                                {item.year}
+                            </Typography>
+                        </TimelineOppositeContent>
+                    )}
+                    <TimelineSeparator>
+                        <TimelineDot sx={{ backgroundColor: '#FEB401' }}>
+                            <IconComponent size={20} />
+                        </TimelineDot>
+                        {index < items.length - 1 && <TimelineConnector />}
+                    </TimelineSeparator>
+                    <TimelineContent sx={{ py: '12px', px: 2 }}>
+                        {isMobile && (
+                            <Typography variant="body2" sx={{ color: '#FEB401', fontWeight: 'bold' }}>
+                                {item.year}
+                            </Typography>
+                        )}
+                        <Typography variant="h6">
+                            {type === 'experience' ? item.title : item.degree}
+                        </Typography>
+                        <Typography variant="body2" sx={{ color: '#aaa' }}>
+                            {type === 'experience' 
+                                ? `${item.company} - ${item.location}`
+                                : item.institution
+                            }
+                        </Typography>
+                        {type === 'experience' && (
+                            <ul>
+                                {item.responsibilities.map((task, i) => (
+                                    <li key={i}>
+                                        <Typography variant="body2">{task}</Typography>
+                                    </li>
+                                ))}
+                            </ul>
+                        )}
+                        {type === 'education' && (
+                            <>
+                                {item.field && (
+                                    <Typography variant="body2">
+                                        Branch: <Typography component="span" sx={{ color: '#aaa' }}>{item.field}</Typography>
+                                    </Typography>
+                                )}
+                                <Typography variant="body2">
+                                    CGPA: <Typography component="span" sx={{ color: '#aaa' }}>{item.cgpa}</Typography>
+                                </Typography>
+                            </>
+                        )}
+                    </TimelineContent>
+                </TimelineItem>
+            ))}
+        </Timeline>
+    );
+};
   return (
     <Box sx={{ color: isColor, backgroundColor: isBgColor, overflowX: 'hidden',margin: { xs: '0% 0% 10% 0%', sm: '0' },
     padding: { xs: '10% 0% 0% 0%', sm: '0' }, // Hide horizontal scroll bar
@@ -280,68 +353,26 @@ const About = () => {
           ))}
         </Grid>
       </Box>
-      <Box sx={{ mb: '5' }} >
-      <Typography variant="h4" gutterBottom>Experience</Typography>
-      <Timeline position="alternate">
-        {experience.map((exp, index) => (
-          <TimelineItem key={index}>
-            <TimelineOppositeContent sx={{ m: 'auto 0' }}>
-              <Typography variant="body2" sx={{ color: '#FEB401', fontWeight: 'bold' }}>
-                {exp.year}
-              </Typography>
-            </TimelineOppositeContent>
-            <TimelineSeparator>
-              <TimelineDot sx={{ backgroundColor: '#FEB401' }} >
-              <WorkOutlineIcon size={20} />
-                </TimelineDot>
-              {index < experience.length  && <TimelineConnector />}
-            </TimelineSeparator>
-            <TimelineContent sx={{ py: '12px', px: 2 }}>
-              <Typography variant="h6">{exp.title}</Typography>
-              <Typography variant="body2" sx={{ color: '#aaa' }}>
-                {exp.company} - {exp.location}
-              </Typography>
-              <ul>
-                {exp.responsibilities.map((task, i) => (
-                  <li key={i}>
-                    <Typography variant="body2">{task}</Typography>
-                  </li>
-                ))}
-              </ul>
-            </TimelineContent>
-          </TimelineItem>
-        ))}
-      </Timeline>
+        <Box sx={{ mb: '5' }}>
+          <Typography variant="h4" gutterBottom>Experience</Typography>
+          <TimelineSection 
+              items={experience} 
+              IconComponent={WorkOutlineIcon} 
+              isMobile={isMobile}
+              type="experience" 
+          />
+        </Box>
 
-      </Box>
-      <Box >
+    <Box>
         <Typography variant="h4" gutterBottom>Education</Typography>
-        <Timeline position="alternate">
-      {education.map((edu, index) => (
-        <TimelineItem key={index} sx={{ p: '1' }}>
-          <TimelineOppositeContent sx={{ m: 'auto 0' }}>
-            <Typography variant="body2" sx={{ color: '#FEB401', fontWeight: 'bold' }}>
-              {edu.year}
-            </Typography>
-          </TimelineOppositeContent>
-          <TimelineSeparator>
-            <TimelineDot sx={{ backgroundColor: '#FEB401' }}>
-              <TbSchool size={20} />
-            </TimelineDot>
-            {index < education.length  && <TimelineConnector  />}
-          </TimelineSeparator>
-          <TimelineContent sx={{ py: '12px', px: 2 }}>
-            <Typography variant="h6">{edu.degree}</Typography>
-            <Typography variant="body2" sx={{ color: '#aaa' }}>
-              {edu.institution}
-            </Typography>
-           {edu.field && <Typography variant="body2">Branch: <Typography variant="span" sx={{color:'#aaa'}}>{edu.field}</Typography></Typography>}
-            <Typography variant="body2">CGPA: <Typography variant="span" sx={{color:'#aaa'}}>{edu.cgpa}</Typography></Typography>
-          </TimelineContent>
-        </TimelineItem>
-      ))}
-    </Timeline>
-      </Box>
+        <TimelineSection 
+            items={education} 
+            IconComponent={TbSchool} 
+            isMobile={isMobile}
+            type="education" 
+        />
+    </Box>
+      
     </Box>
   );
 };

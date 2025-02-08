@@ -93,15 +93,6 @@ const About = () => {
           0% {
             background: conic-gradient(#FEB401 0%, #232322 0%);
           }
-          25% {
-            background: conic-gradient(#FEB401 ${skill.percentage/6}%, #232322 ${skill.percentage/4}%);
-          }
-          50% {
-            background: conic-gradient(#FEB401 ${skill.percentage/4}%, #232322 ${skill.percentage/2}%);
-          }
-          75% {
-            background: conic-gradient(#FEB401 ${skill.percentage/2}%, #232322 ${skill.percentage/1}%);
-          }
           100% {
             background: conic-gradient(#FEB401 ${skill.percentage}%, #232322 ${skill.percentage}%);
           }
@@ -266,7 +257,7 @@ const About = () => {
                   justifyContent: 'center',
                   margin: '0 auto',
                   background: `conic-gradient(#FEB401 0%, ${isColor} 0%)`,
-                  animation: `increaseGradient-${skill.percentage} 2s ease-out forwards infinite`,
+                  animation: `increaseGradient-${skill.percentage} 2s ease-out forwards`,
 
                 }}
               >

@@ -93,9 +93,9 @@ const Projects = () => {
               </Box>
      
 
-      <Box style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gap: '20px', placeItems: 'center', }}>
+      <Box style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gap: '5%', placeItems: 'center',margin:'10%' }}>
         {projects.map((project) => (
-          <Card key={project.title} sx={{backgroundColor:isBgColor,color:isColor, maxWidth: 345, boxShadow: `0px 2px 6px ${isColor}`, borderRadius: '8px' }}>
+          <Card key={project.title} sx={{backgroundColor:isBgColor,color:isColor, maxWidth: 345, boxShadow: `0px 2px 6px ${isColor}`, borderRadius: '8px',margin:'1%' }}>
             <CardMedia
               component="img"
               height="140"
@@ -107,7 +107,7 @@ const Projects = () => {
                 {project.title}
               </Typography>
               <Typography variant="body2" >
-                {project.description}
+                {project.description.length > 30?project.description.slice(0, 30) + "..." :project.description}
               </Typography>
                <Button  onClick={(event) => handleClick(event, project)}
                 

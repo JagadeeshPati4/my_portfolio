@@ -101,7 +101,7 @@ const Projects = () => {
               </Box>
      
 
-      <Box style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gap: '5%', placeItems: 'center',margin:'10%' }}>
+              <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gap: '5%',    placeItems: 'center',   margin: { xs: '20% 10% 35% 10%', sm: '10%' }, }}>
         {projects.map((project) => (
           <Card key={project.title} sx={{backgroundColor:isBgColor,color:isColor, maxWidth: 345, boxShadow: `0px 2px 6px ${isColor}`, borderRadius: '8px',margin:'1%' }}>
             <CardMedia

@@ -5,6 +5,14 @@ import {context} from '../../App';
 
 const projects = [
   {
+    title: 'User Management Dashboard',
+    description: 'User Management Dashboard is a web application designed for administrators or managers to add, update, and delete user details, and a responsive design.The dashboard fetches user data from a jsonplaceholder API and stores it in React context for efficient state management.',
+    technologies: ['React', 'HTML', 'CSS', 'JavaScript', 'Axios API'],
+    link: 'https://github.com/JagadeeshPati4/user_management_dashboard',
+    liveDemo: 'https://user-management-system3.netlify.app/',
+    image: 'https://res.cloudinary.com/jagadeesh123/image/upload/v1739819810/user-management-dashborad.png',
+  },
+  {
     title: 'InstaShare',
     description: 'A social media sharing application that allows users to view, and interact with images and others. Features include user authentication, Login and a responsive design. Built using React for the front end and Fetch API for seamless communication with the backend.',
     technologies: ['React', 'HTML', 'CSS', 'JavaScript', 'Fetch API'],

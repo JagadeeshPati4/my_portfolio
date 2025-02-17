@@ -129,7 +129,7 @@ const Contacts = () => {
           </Box>
 
           {/* Right Side Contact Form */}
-          <form ref={form} style={{ width: "40%", margin: '1%' }} className='form-container' onSubmit={buttonSubmit}>
+          <form ref={form} style={{ width: {xs:"70%",ms:'40%'}, margin: '1%' }} className='form-container' onSubmit={buttonSubmit}>
             <Box sx={{ display: 'flex', flexDirection: 'column' }}>
               <TextField
                 required

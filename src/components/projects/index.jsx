@@ -4,10 +4,27 @@ import { IoEyeOutline } from "react-icons/io5";
 import {context} from '../../App';
 
 const projects = [
+ 
+  {
+    title: 'Appointment Booking',
+    description: 'The Doctor Appointment Booking System is a full-stack web application that allows patients to book appointments with doctors based on availability. The system provides a seamless experience for users to find doctors, schedule appointments, and receive confirmations.',
+    technologies: ['React + vite', 'HTML', 'CSS', 'JavaScript', 'Axios API',"Material UI","Node.js","MongoDB","Express"],
+    link: 'https://github.com/JagadeeshPati4/appointment_booking',
+    liveDemo: 'https://docterappointmentbooking.netlify.app/',
+    image: 'https://res.cloudinary.com/jagadeesh123/image/upload/v1740957761/docterApponiment_fxcs6u.png',
+  },
+  {
+    title: 'Country, State, and City Management Application',
+    description: 'This project is a Country, State, and City Management application built using ReactJS and JavaScript. The application allows users to manage a hierarchical structure of countries, states, and cities, providing functionalities to add, edit, and delete each level.',
+    technologies: ['React + vite', 'HTML', 'CSS', 'JavaScript'],
+    link: 'https://github.com/JagadeeshPati4/country-state-city-management',
+    liveDemo: 'https://country-state-city-management-app.netlify.app/',
+    image: 'https://res.cloudinary.com/jagadeesh123/image/upload/v1740957769/countryStateCityManagement_nbxrli.png',
+  },
   {
     title: 'User Management Dashboard',
     description: 'User Management Dashboard is a web application designed for administrators or managers to add, update, and delete user details, and a responsive design.The dashboard fetches user data from a jsonplaceholder API and stores it in React context for efficient state management.',
-    technologies: ['React', 'HTML', 'CSS', 'JavaScript', 'Axios API'],
+    technologies: ['React + vite', 'HTML', 'CSS', 'JavaScript', 'Axios API'],
     link: 'https://github.com/JagadeeshPati4/user_management_dashboard',
     liveDemo: 'https://user-management-system3.netlify.app/',
     image: 'https://res.cloudinary.com/jagadeesh123/image/upload/v1739819810/user-management-dashborad.png',
